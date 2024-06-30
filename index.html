@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楊智達的個人簡介網頁</title>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: #2980b9;
+        }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .photo-gallery img {
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>楊智達的個人簡介</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="personal-info">
+            <h2>個人資訊</h2>
+            <p>姓名：楊智達</p>
+            <p>年齡：37歲</p>
+            <p>職業：工程師</p>
+            <p>居住地：台北市</p>
+        </section>
+
+        <section id="social-media">
+            <h2>社交媒體連結</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/zhida.yang" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/zhida_yang" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/zhida-yang" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="photos">
+            <h2>個人照片</h2>
+            <div class="photo-gallery">
+                <img src="photo1.jpg" alt="我在工作中">
+                <img src="photo2.jpg" alt="週末登山照">
+                <img src="photo3.jpg" alt="與家人合影">
+            </div>
+        </section>
+
+        <section id="activities">
+            <h2>活動紀錄</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>活動名稱</th>
+                        <th>地點</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-05-15</td>
+                        <td>技術研討會</td>
+                        <td>台北國際會議中心</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-22</td>
+                        <td>公司團建活動</td>
+                        <td>陽明山國家公園</td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-10</td>
+                        <td>志工服務日</td>
+                        <td>新北市立圖書館</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 楊智達. 版權所有.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("網頁已完全載入");
+            
+            // 動態更新年齡
+            const birthYear = 1987; // 假設出生年為1987年
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - birthYear;
+            document.querySelector('#personal-info p:nth-child(2)').textContent = `年齡：${age}歲`;
+            
+            // 添加平滑滾動效果
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
